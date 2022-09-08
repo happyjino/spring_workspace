@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller("mc")
+@RequestMapping("my")
 // mvc 패키지의 mycontroller와 이름이 겹치므로 어노테이션 옆에 괄호 안에 이름을 붙여줄 수 있다!
 public class MyController {
-	@GetMapping("my/index")
+	@GetMapping("index")
 	public String index() {
 		return "get_post/index";
 	}
-	@GetMapping("my/result")
+	@GetMapping("result")
 	public String result01(HttpServletRequest request, Model model){
 		System.out.println("method : " +  request.getMethod());
 		System.out.println("name : " + request.getParameter("name"));
@@ -29,7 +30,7 @@ public class MyController {
 		
 		return "get_post/result";
 	}
-	@PostMapping("my/result")
+	@PostMapping("/result")
 	public String result01(
 			@RequestParam String name,
 			@RequestParam("age") int a,
@@ -42,6 +43,16 @@ public class MyController {
 		model.addAttribute("method", request.getMethod());
 		model.addAttribute("name", name);
 		model.addAttribute("age", a);
+		
+		return "get_post/result";
+	}
+	
+	@PostMapping("/dto")
+	public String dto(MyDTO dto, Model model) {
+		System.out.println(dto.getName());
+		System.out.println(dto.getAge());
+		
+		model.addAttribute("mem", dto);
 		
 		return "get_post/result";
 	}

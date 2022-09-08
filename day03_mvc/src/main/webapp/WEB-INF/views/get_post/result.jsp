@@ -10,6 +10,9 @@
 	<h3>${method } 방식</h3>
 	이름 : ${name }<br>
 	나이 : ${age }<br>
-
+	<hr>
+	<h3>dto</h3>
+	name : ${mem.name }<br>
+	age : ${mem.age }<br>
 </body>
 </html>

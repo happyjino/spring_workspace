@@ -20,6 +20,13 @@
 		<input type="text" name="age"><br>
 		<input type="submit" name="전송"><br>
 	</form>
+	
+	<h3>dto방식</h3>
+	<form action="dto" method="post">
+		<input type="text" name="name"><br>
+		<input type="text" name="age"><br>
+		<input type="submit" name="전송"><br>
+	</form>
 
 </body>
 </html>
