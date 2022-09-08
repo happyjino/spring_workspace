@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="st01" 
+			class="com.care.di02.Student" />
+	<bean id="stb01" 
+			class="com.care.di02.STBean" >
+		<property name="st">
+			<ref bean="st01" />
+		</property>
+		<property name="age" value="222" />
+		<property name="name">
+			<value>홍길순~</value>
+		</property>
+	</bean>
+	
+	<bean id="ps01" class="com.care.di_test.PrintString" />
+	
+	<bean id="pb01" class="com.care.di_test.PrintBean" >
+		<property name="ps">
+			<ref bean="ps01" />
+		</property>
+		<property name="print" value="이걸 출력" />
+	</bean>
+	
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.15.202012132206-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/resources/applicationST.xml</config>
+		<config>src/main/resources/applicationST2.xml</config>
+		<config>src/main/resources/application_test02.xml</config>
+		<config>src/main/resources/application_test02a.xml</config>
+		<config>src/main/resources/application_test03.xml</config>
+		<config>src/main/resources/car.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
