@@ -26,9 +26,12 @@ public class MemberController {
 		// System.out.println(dto.getPw());
 		// System.out.println(dto.getName());
 		
-		System.out.println("ms : " + ms);
+		// System.out.println("ms : " + ms);
 		// 이건 객체가 들어오는지 확인하는것!!
 		// 이렇게 꼭 확인해주기
+		
+		ms.register(dto);
+		
 		return null;
 	}
 	
