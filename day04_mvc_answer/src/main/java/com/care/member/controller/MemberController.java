@@ -2,6 +2,7 @@ package com.care.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -35,5 +36,10 @@ public class MemberController {
 		return "index";
 		// return "redirect:index";
 	}
-	
+	@GetMapping("member_list")
+	public String member_list(Model model) {
+		model.addAttribute("list", ms.getList());
+		
+		return "list";
+	}
 }

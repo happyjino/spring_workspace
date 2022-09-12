@@ -17,4 +17,8 @@ public class MemberDAO {
 	public void register(MemberDTO dto) {
 		DB.add(dto);
 	}
+	
+	public ArrayList<MemberDTO> getList() {
+		return DB;
+	}
 }
