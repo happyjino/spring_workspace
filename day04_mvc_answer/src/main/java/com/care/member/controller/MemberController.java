@@ -9,4 +9,9 @@ public class MemberController {
 	public String index() {
 		return "index";
 	}
+	@GetMapping("register_form")
+	public String register_form() {
+		return "register_form";
+	}
+	
 }
