@@ -32,7 +32,8 @@ public class MemberController {
 		
 		ms.register(dto);
 		
-		return null;
+		return "index";
+		// return "redirect:index";
 	}
 	
 }
