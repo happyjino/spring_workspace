@@ -6,14 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script type="text/javascript">
-function test(){
-	alert('안녕하세요!!!')
-}
+<script src="/root/resources/js/testjs.js" type="text/javascript">
+
 </script>
 
+<link rel="stylesheet" type="text/css" href="/root/resources/css/test.css">
+
 <style type="text/css">
-	h3 {color:olive;}
 </style>
 
 </head>
