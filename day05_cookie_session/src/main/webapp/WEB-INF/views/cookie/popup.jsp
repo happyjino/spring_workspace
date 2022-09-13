@@ -5,15 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<script type="text/javascript">
-function popup(){
-	window.open("popup","","width=300,height=200,top=500,left=500")
-}
-</script>
-
 </head>
-<body onload="popup()">
-	cookie폴더 -> cookie.jsp
+<body>
+	<h3>- 공 지 사 항 -</h3>
+	<p>아무 내용이나 추가~~~</p>
 </body>
 </html>

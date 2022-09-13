@@ -16,6 +16,10 @@ public class CookieController {
 			HttpServletRequest request,
 			@CookieValue(value="myCookie", required=false ) Cookie cook ) {
 		System.out.println("cook : " + cook);
+		if(cook != null) {
+			System.out.println(cook.getName());
+			System.out.println(cook.getValue());
+		}
 		/*
 		Cookie[] cooks = request.getCookies();
 		for(Cookie c : cooks) {
@@ -31,4 +35,9 @@ public class CookieController {
 		response.addCookie(cookie);
 		return "cookie/cookie";
 	}
+	@GetMapping("popup")
+	public String popup() {
+		return "cookie/popup";
+	}
+	
 }
