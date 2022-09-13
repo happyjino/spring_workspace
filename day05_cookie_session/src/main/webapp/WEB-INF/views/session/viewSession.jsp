@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	id : ${id }<br>
+	addr : ${addr }, ${ sessionScope.addr }<hr>
+	<a href="makeSession">makeSession</a>
+	<a href="delSession">delSession</a>
 
 </body>
 </html>

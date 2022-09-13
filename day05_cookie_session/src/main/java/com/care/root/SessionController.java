@@ -17,4 +17,14 @@ public class SessionController {
 		
 		return "session/makeSession";
 	}
+	@GetMapping("viewSession")
+	public String viewSession() {
+		return "session/viewSession";
+	}
+	@GetMapping("delSession")
+	public String delSession(HttpSession session) {
+		session.removeAttribute("id"); // 특정 세션 만료
+		// session.invalidate(); // 모든 세션 만료
+		return "session/delSession";
+	}
 }
