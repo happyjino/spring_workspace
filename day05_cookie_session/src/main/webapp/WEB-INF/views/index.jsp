@@ -18,6 +18,9 @@ function test(){
 
 </head>
 <body>
+	
+	<img src="cat.jfif" width="100" height="100">
+	<hr>
 	<h3 onclick="test()">index.jsp</h3>
 </body>
 </html>
