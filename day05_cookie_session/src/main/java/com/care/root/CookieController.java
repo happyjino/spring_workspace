@@ -31,17 +31,26 @@ public class CookieController {
 			System.out.println(c.getValue());
 		} 예전 방식들~~~
 		*/
-		
+		/*
 		Cookie cookie = new Cookie("myCookie", "testCookie");
-		cookie.setMaxAge(5);
-		cookie.setPath("/");
+		cookie.setMaxAge(10000000);
+		cookie.setPath("/popup");
 		
 		response.addCookie(cookie);
+		*/
 		return "cookie/cookie";
 	}
 	@GetMapping("popup")
 	public String popup() {
 		return "cookie/popup";
 	}
-	
+	@GetMapping("cookieChk")
+	public void cookieChk(HttpServletResponse response,
+			HttpServletRequest request) {
+		Cookie cookie = new Cookie("myCookie", "testCookie");
+		cookie.setMaxAge(10000000);
+		cookie.setPath(request.getContextPath());
+		
+		response.addCookie(cookie);
+	}
 }
