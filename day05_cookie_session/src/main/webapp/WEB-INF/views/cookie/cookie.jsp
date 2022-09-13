@@ -8,7 +8,9 @@
 
 <script type="text/javascript">
 function popup(){
-	window.open("popup","","width=300,height=200,top=500,left=500")
+	if('${cook}' == ""){
+		window.open("popup","","width=300,height=200,top=500,left=500")
+	}
 }
 </script>
 

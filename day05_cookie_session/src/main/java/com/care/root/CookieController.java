@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CookieController {
 	@GetMapping("cookie")
 	public String myCookie(
-			HttpServletResponse response, 
+			HttpServletResponse response, Model model,
 			HttpServletRequest request,
 			@CookieValue(value="myCookie", required=false ) Cookie cook ) {
+		
+		model.addAttribute("cook", cook);
+		
 		System.out.println("cook : " + cook);
 		if(cook != null) {
 			System.out.println(cook.getName());
