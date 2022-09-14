@@ -161,7 +161,7 @@
       <Context docBase="day03_mvc" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:day03_mvc"/>  
 -->
       
-      <Context docBase="day05_alone" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_alone"/></Host>
+      <Context docBase="day05_cookie_session" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_cookie_session"/></Host>
     </Engine>
   </Service>
 </Server>
