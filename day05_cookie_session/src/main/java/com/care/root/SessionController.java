@@ -60,4 +60,5 @@ public class SessionController {
 	public String main() {
 		return "session/main";
 	}
+	
 }
