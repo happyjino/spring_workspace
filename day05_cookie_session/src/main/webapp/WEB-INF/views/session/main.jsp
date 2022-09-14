@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	${nick_name } 님 환영합니다.
+	아이디는 ${login }이군요
+	<hr>
+	<a href="logout">로그아웃</a>
+	<a href="login">login 이동</a>
 </body>
 </html>
