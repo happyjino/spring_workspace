@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.care.root.member.controller.MemberController;
+import com.care.root.member.service.MemberService;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations = {
@@ -20,5 +21,10 @@ public class TestMember {
 	@Test
 	public void testMc() {
 		assertNotNull(mc);
+	}
+	
+	@Autowired MemberService ms;
+	@Test public void testMs() {
+		assertNotNull(ms);
 	}
 }
