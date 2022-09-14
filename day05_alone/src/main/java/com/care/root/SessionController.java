@@ -11,44 +11,58 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SessionController {
+
 	@GetMapping("makeSession")
-	public String makeSession(HttpServletRequest req) {
+	public String makeSession(
+			HttpServletRequest req) {
+		
 		HttpSession session = req.getSession();
 		
-		session.setAttribute("id", "홍길동");
-		session.setAttribute("addr", "산골짜기");
+		session.setAttribute("id", "wlsgh1128");
+		session.setAttribute("gf", "김채원");
 		
 		return "session/makeSession";
 	}
+	
 	@GetMapping("viewSession")
 	public String viewSession(Model model) {
+		
 		model.addAttribute("id", "model id입니다.");
+		model.addAttribute("gf", "model gf입니다.");
 		
 		return "session/viewSession";
 	}
+	
 	@GetMapping("delSession")
 	public String delSession(HttpSession session) {
-		session.removeAttribute("id"); // 특정 세션 만료
-		// session.invalidate(); // 모든 세션 만료
+		
+		session.removeAttribute("id");
+		
 		return "session/delSession";
 	}
 	@GetMapping("login")
 	public String login() {
 		return "session/login";
 	}
-	@PostMapping("chk_user")
-	public String chkUser(
+	@PostMapping("login_chk")
+	public String login_chk(
 			@RequestParam String id,
 			@RequestParam String pw,
 			HttpSession session) {
-		String DB_id="1", DB_pw = "1", DB_name="홍길동";
+		
+		String DB_id="1", DB_pw="1", DB_name="홍길동";
 		if(DB_id.equals(id) && DB_pw.equals(pw)) {
 			session.setAttribute("login", DB_id);
-			session.setAttribute("nick_name", DB_name);
+			session.setAttribute("nickname", DB_name);
 			return "session/main";
 		}
 		
 		return "redirect:login";
+	}
+	@GetMapping("main")
+	public String main() {
+		
+		return "session/main";
 	}
 	@GetMapping("logout")
 	public String logout(HttpSession session) {
@@ -56,10 +70,4 @@ public class SessionController {
 		
 		return "redirect:login";
 	}
-	@GetMapping("main")
-	public String main() {
-		return "session/main";
-	}
-	
-	
 }

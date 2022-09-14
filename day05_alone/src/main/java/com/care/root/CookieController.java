@@ -30,11 +30,32 @@ public class CookieController {
 			System.out.println(c.getValue());
 		}
 		*/
+		return "cookie/cookie";
+	}
+	@GetMapping("popup")
+	public String popup() {
+		return "cookie/popup";
+	}
+	@GetMapping("make_cookie")
+	public String make_cookie(
+			HttpServletResponse response,
+			HttpServletRequest request) {
 		Cookie cookie = new Cookie("jinhoCookie", "choco");
-		cookie.setMaxAge(10);
-		cookie.setPath("/");
+		cookie.setMaxAge(20);
+		cookie.setPath(request.getContextPath());
 		
 		response.addCookie(cookie);
+		
 		return "cookie/cookie";
+	}
+	@GetMapping("delCookie")
+	public String delCookie(
+			HttpServletResponse response,
+			@CookieValue(value="jinhoCookie", required=false) Cookie cook) {
+		
+		cook.setMaxAge(0);
+		response.addCookie(cook);
+		
+		return "redirect:cookie";
 	}
 }

@@ -159,9 +159,11 @@
       <Context docBase="day04_mvc_answer" path="/member" reloadable="true" source="org.eclipse.jst.jee.server:day04_mvc_answer"/>
       <Context docBase="day01_di" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day01_di"/>
       <Context docBase="day03_mvc" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:day03_mvc"/> 
-      <Context docBase="day05_cookie_session" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_cookie_session"/> 
+      <Context docBase="day05_cookie_session" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_cookie_session"/>
+      <Context docBase="day06_test_mybatis" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day06_test_mybatis"/> 
 -->
-      <Context docBase="day06_test_mybatis" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day06_test_mybatis"/></Host>
+      
+      <Context docBase="day05_alone" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_alone"/></Host>
     </Engine>
   </Service>
 </Server>
