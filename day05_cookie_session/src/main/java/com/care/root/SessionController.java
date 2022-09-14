@@ -56,4 +56,8 @@ public class SessionController {
 		
 		return "redirect:login";
 	}
+	@GetMapping("main")
+	public String main() {
+		return "session/main";
+	}
 }
