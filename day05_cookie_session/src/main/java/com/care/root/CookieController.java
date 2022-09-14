@@ -34,7 +34,7 @@ public class CookieController {
 		/*
 		Cookie cookie = new Cookie("myCookie", "testCookie");
 		cookie.setMaxAge(10000000);
-		cookie.setPath("/popup");
+		cookie.setPath("/");
 		
 		response.addCookie(cookie);
 		*/
@@ -48,7 +48,7 @@ public class CookieController {
 	public void cookieChk(HttpServletResponse response,
 			HttpServletRequest request) {
 		Cookie cookie = new Cookie("myCookie", "testCookie");
-		cookie.setMaxAge(10000000);
+		cookie.setMaxAge(100);
 		cookie.setPath(request.getContextPath());
 		
 		response.addCookie(cookie);
