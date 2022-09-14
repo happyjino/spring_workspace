@@ -41,6 +41,13 @@ public class SessionController {
 			@RequestParam String id,
 			@RequestParam String pw,
 			HttpSession session) {
-		return null;
+		String DB_id="1", DB_pw = "1", DB_name="홍길동";
+		if(DB_id.equals(id) && DB_pw.equals(pw)) {
+			session.setAttribute("login", DB_id);
+			session.setAttribute("nick_name", DB_name);
+			return "session/main";
+		}
+		
+		return "redirect:login";
 	}
 }
