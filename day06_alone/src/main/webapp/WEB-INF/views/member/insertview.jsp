@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h3>데이터 추가</h3>
+	
+	<form action="insert" method="post">
+		<input type="text" name="id" placeholder="id"><br>
+		<input type="text" name="name" placeholder="name"><br>
+		<input type="submit" value="전송">
+	</form>
 </body>
 </html>

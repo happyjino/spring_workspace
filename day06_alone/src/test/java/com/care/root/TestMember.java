@@ -29,12 +29,13 @@ public class TestMember {
 	@Test
 	public void testMs() {
 		assertNotNull(ms);
-		
+		/*
 		MemberDTO dto = new MemberDTO();
 		dto.setId(333);
 		dto.setName("홍길동333");
 		
 		ms.insertMember(dto);
+		*/
 	}
 	
 	@Autowired MemberDAO dao;
