@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.care.root.member.controller.MemberController;
 import com.care.root.member.dao.MemberDAO;
+import com.care.root.member.dto.MemberDTO;
 import com.care.root.member.service.MemberService;
 
 @RunWith(SpringRunner.class)
@@ -33,5 +34,11 @@ public class TestMember {
 	@Autowired MemberDAO dao;
 	@Test public void testDao() {
 		assertNotNull(dao);
+		
+		MemberDTO dto = new MemberDTO();
+		dto.setId(1111);
+		dto.setName("홍길동");
+		
+		dao.insertMember(dto);
 	}
 }
