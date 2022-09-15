@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="insert" method="post">
+		<input type="text" name="id" placeholder="id"><br>
+		<input type="text" name="name" placeholder="name"><br>
+		<input type="submit" value="저장">
+	</form>
 </body>
 </html>
