@@ -29,6 +29,12 @@ public class TestMember {
 	@Test
 	public void testMs() {
 		assertNotNull(ms);
+		
+		MemberDTO dto = new MemberDTO();
+		dto.setId(333);
+		dto.setName("홍길동333");
+		
+		ms.insertMember(dto);
 	}
 	
 	@Autowired MemberDAO dao;
@@ -36,11 +42,7 @@ public class TestMember {
 	public void testDao() {
 		assertNotNull(dao);
 		
-		MemberDTO dto = new MemberDTO();
-		dto.setId(222);
-		dto.setName("홍길동222");
 		
-		dao.insertMember(dto);
 	}
 	
 }
