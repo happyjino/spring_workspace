@@ -3,8 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.care.root.member.dao.MemberDAO">
+
+	<resultMap type="com.care.root.member.dto.MemberDTO" id="member">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+	</resultMap>
 	
 	<insert id="insertMember">
 		insert into test_mybatis values(#{id}, #{name})
 	</insert>
+	
+	<select id="getMember" resultMap="member">
+		select * from test_mybatis
+	</select>
 </mapper>
