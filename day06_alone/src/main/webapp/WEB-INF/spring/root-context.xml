@@ -30,5 +30,10 @@
 	
 	<!-- 마이바티스 xml파일과 dao빈 연결  -->
 	<mybatis-spring:scan base-package="com.care.root.member.dao"/>
+	
+	<bean name="txMgr"
+ 			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	   <property name="dataSource" ref="ds" />
+	</bean>
 
 </beans>
