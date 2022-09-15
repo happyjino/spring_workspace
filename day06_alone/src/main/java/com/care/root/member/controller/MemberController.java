@@ -2,6 +2,7 @@ package com.care.root.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -25,6 +26,11 @@ public class MemberController {
 	public String insertMember(MemberDTO dto) {
 		ms.insertMember(dto);
 		return "redirect:index";
+	}
+	@GetMapping("memberview")
+	public String memberView(Model model) {
+		ms.memberView(model);
+		return "member/memberview";
 	}
 	
 }
