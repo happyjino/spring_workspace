@@ -9,11 +9,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.care.root.member.controller.MemberController;
+import com.care.root.member.dao.MemberDAO;
 import com.care.root.member.service.MemberService;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations = {
-		"classpath:testMember.xml"
+		"classpath:testMember.xml",
+		"file:src/main/webapp/WEB-INF/spring/root-context.xml"
 })
 public class TestMember {
 	@Autowired
@@ -26,5 +28,10 @@ public class TestMember {
 	@Autowired MemberService ms;
 	@Test public void testMs() {
 		assertNotNull(ms);
+	}
+	
+	@Autowired MemberDAO dao;
+	@Test public void testDao() {
+		assertNotNull(dao);
 	}
 }
