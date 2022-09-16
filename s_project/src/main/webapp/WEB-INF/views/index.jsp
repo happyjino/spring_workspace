@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+index 페이지
+<a href="index">HOME</a>&nbsp;
+<a href="login">로그인</a>
 
 </body>
 </html>
