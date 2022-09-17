@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div style="text-align:center;">
+	<hr>
+	Copyright @ CARE Lab.All rights reserved.
+</div>
 </body>
 </html>

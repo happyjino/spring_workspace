@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-index 페이지
-<a href="index">HOME</a>&nbsp;
-<a href="login">로그인</a>
+
+<%@ include file="default/header.jsp" %>
+<div style="height:500px">
+	<%@ include file="default/main.jsp" %>
+</div>
+
+<%@ include file="default/footer.jsp" %>
 
 </body>
 </html>

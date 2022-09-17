@@ -8,5 +8,14 @@
 </head>
 <body>
 
+	<%@ include file="../default/header.jsp" %>
+	<div style="height:500px">
+		<h2>로그인 성공</h2>
+	</div>
+	
+	<%@ include file="../default/footer.jsp" %>
+
+
+
 </body>
 </html>

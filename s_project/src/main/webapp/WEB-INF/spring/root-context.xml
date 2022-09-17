@@ -9,30 +9,32 @@ xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring">
 
 <!-- Root Context: defines shared resources visible to all other web components -->
 
-<!-- 히카리 커넥션풀 빈 등록 -->
-<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" />
-<property name="username" value="c##spring" />
-<property name="password" value="1234" />
-</bean>
-<!-- 히카리 데이터소스 빈 등록 -->
-<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
-<constructor-arg ref="hikariConfig"/>
-</bean>
-
-<!-- 데이터소스 마이바티스에 등록 및 xml 위치 설정 -->
-<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-<property name="dataSource" ref="ds"/>
-<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml"/>
-</bean>
-<!-- 마이바티스 xml파일과 dao빈 연결  -->
-<mybatis-spring:scan base-package="com.care.root.mybatis.member.MemberMapper"/>
-
-<bean name="txMgr"
- class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-   <property name="dataSource" ref="ds" />
-</bean>
+	<!-- 히카리 커넥션풀 빈 등록 -->
+		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="username" value="c##spring" />
+			<property name="password" value="1234" />
+		</bean>
+		
+	<!-- 히카리 데이터소스 빈 등록 -->
+		<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
+			<constructor-arg ref="hikariConfig"/>
+		</bean>
+	
+	<!-- 데이터소스 마이바티스에 등록 및 xml 위치 설정 -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="ds"/>
+			<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml"/>
+		</bean>
+		
+	<!-- 마이바티스 xml파일과 dao빈 연결  -->
+		<mybatis-spring:scan base-package="com.care.root.mybatis"/>
+	
+	<!-- 통합 테스트 때 롤백을 위한 txMgr -->
+	<bean name="txMgr" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+   		<property name="dataSource" ref="ds" />
+	</bean>
 
 
 </beans>
