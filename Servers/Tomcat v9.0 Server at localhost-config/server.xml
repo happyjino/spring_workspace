@@ -163,8 +163,9 @@
       <Context docBase="day06_test_mybatis" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day06_test_mybatis"/>
       <Context docBase="day05_alone" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_alone"/>
       <Context docBase="day06_alone" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day06_alone"/>
+      <Context docBase="s_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:s_project"/>
 -->
-      <Context docBase="s_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:s_project"/></Host>
+      <Context docBase="ss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:ss_project"/></Host>
     </Engine>
   </Service>
 </Server>
