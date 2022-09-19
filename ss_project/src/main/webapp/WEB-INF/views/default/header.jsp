@@ -50,8 +50,15 @@
 			<nav>
 				<ul>
 					<li><a href="${contextPath }/index">HOME</a></li>
-					<li><a href="${contextPath }/member/login">LOGIN</a></li>
-					
+					<li><a href="${contextPath }/member/memberinfo">회원정보</a></li>
+					<c:choose>
+						<c:when test="${login == null}">
+							<li><a href="${contextPath }/member/login">LOGIN</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="${contextPath }/member/logout">LOGOUT</a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</nav>
 		</div>
