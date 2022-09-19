@@ -14,5 +14,11 @@
 	<select id="getMember" resultMap="member">
 		select * from membership where id=#{id}
 	</select>
+	<select id="getAllMember" resultMap="member">
+		select * from membership
+	</select>
+	<insert id="register">
+		insert into membership(id, pwd, addr1, addr2, addr3) values(#{id}, #{pwd}, #{addr1}, #{addr2}, #{addr3})
+	</insert>
 
 </mapper>

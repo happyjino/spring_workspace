@@ -1,5 +1,7 @@
 package com.care.root.member.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.care.root.member.dto.MemberDTO;
 import com.care.root.member.service.MemberService;
 
 @Controller
@@ -46,8 +49,30 @@ public class MemberController {
 	@GetMapping("memberinfo")
 	public String memberinfo(HttpSession session) {
 		if(session.getAttribute("login") != null) {
+			ArrayList<MemberDTO> list = ms.getAllMember();
+			session.setAttribute("list", list);
 			return "member/memberinfo";
 		}
 		return "redirect:login";
+	}
+	@GetMapping("info")
+	public String info(Model model, @RequestParam String id) {
+		MemberDTO member = ms.getMember(id);
+		model.addAttribute("member", member);
+		return "member/info";
+	}
+	@GetMapping("register")
+	public void register() {}
+	
+	@PostMapping("register_member")
+	public String register_member(
+			MemberDTO dto,
+			@RequestParam String id,
+			@RequestParam String pwd,
+			@RequestParam String addr1,
+			@RequestParam String addr2,
+			@RequestParam String addr3) {
+		ms.register(dto);
+		return "redirect:/index";
 	}
 }

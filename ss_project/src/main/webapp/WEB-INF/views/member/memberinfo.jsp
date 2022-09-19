@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script>
+	function info(id){
+		location.href = "info?id="+id;
+	}
+</script>
+
 </head>
 <body>
 	<%@ include file="../default/header.jsp" %><br>
@@ -16,6 +23,13 @@
 				<th width="200">비밀번호</th>
 				<th width="200">주소</th>
 			</tr>
+			<c:forEach var="member" items="${list }">
+				<tr>
+					<td onclick="info('${member.id}')">${member.id }</td>
+					<td>${member.pwd }</td>
+					<td>${member.addr2} ${member.addr3 }</td>
+				</tr>
+			</c:forEach>
 		</table>
 	</div>
 	
