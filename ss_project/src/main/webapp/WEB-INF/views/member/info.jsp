@@ -10,7 +10,7 @@
 	<%@ include file="../default/header.jsp" %><br>
 	<div align="center">
 		<h2>&nbsp;&nbsp; ${member.id } 정보</h2><br>
-		<table border="1">
+		<table class="table table-hover">
 			<tr>
 				<th>아이디</th><td>${member.id }</td>
 			</tr>
