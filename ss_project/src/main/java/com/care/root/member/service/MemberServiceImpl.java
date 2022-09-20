@@ -18,7 +18,7 @@ public class MemberServiceImpl implements MemberService{
 		MemberDTO member = mm.getMember(id);
 		int result = -1;
 		if(member != null) {
-			if(pwd.equals(member.getPwd())) {
+			if(e.matches(pwd, member.getPwd()) || pwd.contentEquals(member.getPwd())) {
 				result = 0;	
 			}
 		}
