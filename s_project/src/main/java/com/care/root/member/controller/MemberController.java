@@ -14,6 +14,7 @@ public class MemberController {
 	
 	@GetMapping("index")
 	public String index() {
+		System.out.println("컨트롤러 index");
 		return "index";
 	}
 	@GetMapping("login")

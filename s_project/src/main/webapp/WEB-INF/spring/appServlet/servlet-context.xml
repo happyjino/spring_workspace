@@ -23,6 +23,14 @@
 	
 	<context:component-scan base-package="com.care.root" />
 	
+	<beans:bean id="ti" class="com.care.root.common.TestInterceptor" />
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/index" />
+			<beans:ref bean="ti" />
+		</interceptor>
+	</interceptors>
 	
 	
 </beans:beans>
