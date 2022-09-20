@@ -17,7 +17,7 @@
 	<%@ include file="../default/header.jsp" %><br>
 	<div align="center">
 		<h2>&nbsp;&nbsp;회원목록</h2><br>
-		<table border="1">
+		<table class="table table-hover">
 			<tr>
 				<th width="200">아이디</th>
 				<th width="200">비밀번호</th>

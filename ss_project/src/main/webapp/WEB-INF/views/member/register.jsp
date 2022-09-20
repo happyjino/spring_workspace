@@ -35,7 +35,7 @@ function daumPost(){
 	<%@ include file="../default/header.jsp" %><br>
 	<div align="center">
 		<h2>회원등록</h2>
-		<form action="register_member" method="post">
+		<form id="fo" action="register_member" method="post">
 			<table border="1">
 				<tr><td><input type="text" name="id" placeholder="아이디"></td></tr>
 				<tr><td><input type="password" name="pwd" placeholder="비밀번호"></td></tr>
