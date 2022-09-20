@@ -2,6 +2,8 @@ package com.care.root.member.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -42,5 +44,9 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("변경 후 : " + e.encode(dto.getPwd()));
 		dto.setPwd(e.encode(dto.getPwd()));
 		mm.register(dto);
+	}
+	
+	public void delAccount(String id) {
+		mm.delAccount(id);
 	}
 }

@@ -8,4 +8,5 @@ public interface MemberMapper {
 	public MemberDTO getMember(String id);
 	public ArrayList<MemberDTO> getAllMember();
 	public void register(MemberDTO dto);
+	public void delAccount(String id);
 }

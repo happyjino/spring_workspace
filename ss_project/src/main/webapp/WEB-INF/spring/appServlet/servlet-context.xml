@@ -30,6 +30,7 @@
 		<interceptor>
 			<mapping path="/member/memberinfo" />
 			<mapping path="/member/info" />
+			<mapping path="/member/del" />
 			<beans:ref bean="login_chk" />
 		</interceptor>
 		

@@ -20,5 +20,8 @@
 	<insert id="register">
 		insert into membership(id, pwd, addr1, addr2, addr3) values(#{id}, #{pwd}, #{addr1}, #{addr2}, #{addr3})
 	</insert>
+	<delete id="delAccount">
+		delete from membership where id=#{id}
+	</delete>
 
 </mapper>

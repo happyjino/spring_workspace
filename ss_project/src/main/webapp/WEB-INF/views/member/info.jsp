@@ -20,7 +20,19 @@
 			<tr>
 				<th>주소</th><td>${member.addr2 } ${member.addr3 }</td>
 			</tr>
-		</table>
+		</table><br>
+		<c:choose>
+			<c:when test="${login == member.id }">
+				<form action="del" method="post">
+					<input type="hidden" name="id" value="${member.id }">
+					<input type="submit" value="삭제">
+				</form>
+				<a href="del?id=${member.id }">삭제</a>
+			</c:when>
+			<c:otherwise>
+			</c:otherwise>
+		</c:choose>
+		
 	</div>
 	
 </body>

@@ -64,7 +64,7 @@ public class MemberController {
 	@GetMapping("register")
 	public void register() {}
 	
-	@PostMapping("register_member")
+	@PostMapping("register")
 	public String register_member(
 			MemberDTO dto,
 			@RequestParam String id,
@@ -73,6 +73,14 @@ public class MemberController {
 			@RequestParam String addr2,
 			@RequestParam String addr3) {
 		ms.register(dto);
+		return "redirect:/index";
+	}
+	@GetMapping("del")
+	public String del(@RequestParam String id, HttpSession session) {
+		if(session.getAttribute("login").equals(id)) {
+			ms.delAccount(id);
+			session.invalidate();
+		}
 		return "redirect:/index";
 	}
 }
