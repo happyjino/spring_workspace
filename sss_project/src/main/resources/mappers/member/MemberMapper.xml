@@ -20,5 +20,9 @@
 	<select id="getAllMember" resultMap="member">
 		select * from membership
 	</select>
+	
+	<insert id="register_member">
+		insert into membership (id, pwd, addr1, addr2, addr3) values (#{id}, #{pwd}, #{addr1}, #{addr2}, #{addr3})
+	</insert>
 
 </mapper>

@@ -43,11 +43,11 @@ public class MemberDTO {
 		this.addr3 = addr3;
 	}
 
-	public String getAuto_Login() {
+	public String getAutoLogin() {
 		return autoLogin;
 	}
 
-	public void setAuto_Login(String autoLogin) {
+	public void setAutoLogin(String autoLogin) {
 		this.autoLogin = autoLogin;
 	}
 	

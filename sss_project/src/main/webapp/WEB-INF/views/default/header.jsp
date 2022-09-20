@@ -14,6 +14,7 @@
 
 <style type="text/css">
 	* { margin: 0; }
+	.formwrap { width: 500px; margin: auto; }
 	.wrap { width: 1000px; margin: auto; }
 	.header { width: 1000px; }
 	.navdiv { width: 100%; background-color: olive; }
@@ -37,6 +38,8 @@
 	}
 	.content { margin-top: 50px; }
 </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
 </head>
 <body>

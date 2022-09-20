@@ -10,7 +10,7 @@
 	<%@ include file="../default/header.jsp" %>
 	<div class="wrap" align="center">
 	<h3>멤버 정보</h3>
-	<table border="1">
+	<table class="table table-bordered">
 		<tr>
 			<th width="200">아이디</th>
 			<th width="200">비밀번호</th>
@@ -18,7 +18,7 @@
 		</tr>
 		<c:forEach var="dto" items="${list }">
 			<tr>
-				<td>${dto.id}</td>
+				<td><a href="info?id=${dto.id }">${dto.id}</a></td>
 				<td>${dto.pwd}</td>
 				<td>${dto.addr2 } ${dto.addr3 }</td>
 			</tr>
