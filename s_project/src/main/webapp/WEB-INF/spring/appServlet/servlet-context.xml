@@ -24,11 +24,16 @@
 	<context:component-scan base-package="com.care.root" />
 	
 	<beans:bean id="ti" class="com.care.root.common.TestInterceptor" />
+	<beans:bean id="loginChk" class="com.care.root.common.LoginChk" />
 	
 	<interceptors>
 		<interceptor>
 			<mapping path="/index" />
 			<beans:ref bean="ti" />
+		</interceptor>
+		<interceptor>
+			<mapping path="/index" />
+			<beans:ref bean="loginChk" />
 		</interceptor>
 	</interceptors>
 	
