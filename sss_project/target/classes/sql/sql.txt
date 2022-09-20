@@ -1,0 +1,8 @@
+create table membership(
+    id varchar2(20) primary key,
+    pwd varchar2(100),
+    addr1 varchar2(10),
+    addr2 varchar2(50),
+    addr3 varchar2(100),
+    auto_login varchar2(100) default 'nan' not null
+);
