@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import com.care.root.member.service.MemberService;
 @RequestMapping("member")
 public class MemberController {
 	@Autowired MemberService ms;
+	BCryptPasswordEncoder e = new BCryptPasswordEncoder();
 	
 	@GetMapping("login")
 	public void login() {}
@@ -82,5 +84,25 @@ public class MemberController {
 			session.invalidate();
 		}
 		return "redirect:/index";
+	}
+	@GetMapping("modify")
+	public String modify(@RequestParam String id, HttpSession session) {
+		if(session.getAttribute("login").equals(id)) {
+			MemberDTO member = ms.getMember(id);
+			session.setAttribute("member", member);
+			return "member/modify";
+		}
+		return "redirect:/index";
+	}
+	@PostMapping("modify")
+	public String modify_member(MemberDTO dto, HttpSession session) {
+		if(dto.getPwd().equals("")) {
+			MemberDTO member = (MemberDTO)session.getAttribute("member");
+			dto.setPwd(member.getPwd());
+		}else {
+			dto.setPwd(e.encode(dto.getPwd()));
+		}
+		ms.modify(dto);
+		return "redirect:memberinfo";
 	}
 }

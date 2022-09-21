@@ -23,6 +23,7 @@
 		</table><br>
 		<c:choose>
 			<c:when test="${login == member.id }">
+				<input type="button" value="수정" onclick="location.href='modify?id=${member.id}'">
 				<form action="del" method="post">
 					<input type="hidden" name="id" value="${member.id }">
 					<input type="submit" value="삭제">

@@ -12,4 +12,5 @@ public interface MemberService {
 	public MemberDTO getMember(String id);
 	public void register(MemberDTO dto);
 	public void delAccount(String id);
+	public void modify(MemberDTO dto);
 }

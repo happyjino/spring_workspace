@@ -23,5 +23,8 @@
 	<delete id="delAccount">
 		delete from membership where id=#{id}
 	</delete>
+	<update id="update">
+		update membership set pwd=#{pwd}, addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3} where id=#{id}
+	</update>
 
 </mapper>

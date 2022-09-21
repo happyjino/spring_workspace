@@ -49,4 +49,7 @@ public class MemberServiceImpl implements MemberService{
 	public void delAccount(String id) {
 		mm.delAccount(id);
 	}
+	public void modify(MemberDTO dto) {
+		mm.update(dto);
+	}
 }
