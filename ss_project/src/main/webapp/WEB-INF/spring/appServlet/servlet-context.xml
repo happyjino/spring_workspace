@@ -25,13 +25,17 @@
 	
 	<beans:bean id="login_chk" class="com.care.root.common.LoginChk" />
 	<beans:bean id="ti" class="com.care.root.common.TestInterceptor" />
+	<beans:bean id="user_check" class="com.care.root.common.UserCheck" />
 	
 	<interceptors>
 		<interceptor>
+			<mapping path="/member/modify" />
+			<mapping path="/member/del" />
+			<beans:ref bean="user_check" />
+		</interceptor>
+		<interceptor>
 			<mapping path="/member/memberinfo" />
 			<mapping path="/member/info" />
-			<mapping path="/member/del" />
-			<mapping path="/member/modify" />
 			<beans:ref bean="login_chk" />
 		</interceptor>
 		
