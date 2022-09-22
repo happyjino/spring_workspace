@@ -46,12 +46,10 @@ public class MemberController {
 	
 	@GetMapping("memberinfo")
 	public String memberinfo(Model model, HttpSession session) {
-		if(session.getAttribute("login") != null) {
-			ms.memberInfo(model);
-			return "member/memberinfo";
-		}
+	
+		ms.memberInfo(model);
+		return "member/memberinfo";
 		
-		return "redirect:login";
 	}
 	@GetMapping("info")
 	public String info(@RequestParam String id, HttpSession session) {
@@ -70,5 +68,22 @@ public class MemberController {
 		ms.register_member(dto);
 		return "redirect:/index";
 	}
-	
+	@GetMapping("delete")
+	public String delete(@RequestParam String id, HttpSession session) {
+		ms.delete(id, session);
+		
+		return "redirect:/index";
+	}
+	@GetMapping("modify")
+	public String modify() {
+		
+		return "member/modify";
+	}
+	@PostMapping("modify")
+	public String modify_member(MemberDTO dto, Model model, HttpSession session) {
+		ms.modify(dto, session);
+		model.addAttribute("id", dto.getId());
+		
+		return "redirect:info";
+	}
 }

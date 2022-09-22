@@ -23,6 +23,30 @@
 	
 	<context:component-scan base-package="com.care.root" />
 	
+	<beans:bean id="test_index" class="com.care.root.common.TestInterceptor" />
+	<beans:bean id="user_check" class="com.care.root.common.UserCheck" />
+	<beans:bean id="login_check" class="com.care.root.common.LoginCheck" />
+	
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/index" />
+			<beans:ref bean="test_index" />
+		</interceptor>
+		<interceptor>
+			<mapping path="/member/info" />
+			<mapping path="/member/modify" />
+			<mapping path="/member/delete" />
+			<beans:ref bean="login_check" />
+		</interceptor>
+		<interceptor>
+			<mapping path="/member/modify" />
+			<mapping path="/member/delete" />
+			<beans:ref bean="user_check" />
+		</interceptor>
+		
+	</interceptors>
+	
 	
 	
 </beans:beans>

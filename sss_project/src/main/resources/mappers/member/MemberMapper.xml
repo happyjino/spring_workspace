@@ -24,5 +24,13 @@
 	<insert id="register_member">
 		insert into membership (id, pwd, addr1, addr2, addr3) values (#{id}, #{pwd}, #{addr1}, #{addr2}, #{addr3})
 	</insert>
+	
+	<delete id="delete">
+		delete from membership where id=#{id}
+	</delete>
+	
+	<update id="modify">
+		update membership set pwd=#{pwd}, addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3} where id=#{id}
+	</update>
 
 </mapper>

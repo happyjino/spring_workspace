@@ -37,6 +37,8 @@ public class HomeController {
 		return "home";
 	}
 	@GetMapping("index")
-	public void index() {}
+	public void index() {
+		System.out.println("index");
+	}
 	
 }

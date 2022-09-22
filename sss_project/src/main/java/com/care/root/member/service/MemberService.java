@@ -11,4 +11,6 @@ public interface MemberService {
 	public void memberInfo(Model model);
 	public void info(HttpSession session, String id);
 	public void register_member(MemberDTO dto);
+	public void delete(String id, HttpSession session);
+	public void modify(MemberDTO dto, HttpSession session);
 }

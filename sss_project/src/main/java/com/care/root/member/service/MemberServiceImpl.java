@@ -40,4 +40,23 @@ public class MemberServiceImpl implements MemberService{
 	public void register_member(MemberDTO dto) {
 		mm.register_member(dto);
 	}
+	public void delete(String id, HttpSession session) {
+		
+		mm.delete(id);
+		session.invalidate();
+		
+	}
+	public void modify(MemberDTO dto, HttpSession session) {
+		String input_pwd = dto.getPwd();
+		String member_pwd = ((MemberDTO)session.getAttribute("member")).getPwd();
+		if(input_pwd.equals("") == false) {
+			dto.setPwd(e.encode(input_pwd));
+			System.out.println("비밀번호 입력");
+		}else {
+			dto.setPwd(member_pwd);
+			System.out.println("비밀번호 입력 안함");
+		}
+		
+		mm.modify(dto);
+	}
 }

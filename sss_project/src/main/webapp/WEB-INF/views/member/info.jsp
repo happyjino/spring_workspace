@@ -22,6 +22,15 @@
 			<c:if test="${member.autoLogin != 'nan' }">
 				<tr><th>자동 로그인 여부</th><td>설정함</td></tr>
 			</c:if>
+			<c:if test="${member.id == login }">
+				<tr>
+					<th>계정</th>
+					<td>
+						<a class="btn btn-outline-success" href="modify?id=${member.id }">수정</a>&nbsp;&nbsp;
+						<a class="btn btn-outline-danger" href="delete?id=${member.id }">삭제</a>
+					</td>
+				</tr>
+			</c:if>
 			
 		</table>
 	</div>
