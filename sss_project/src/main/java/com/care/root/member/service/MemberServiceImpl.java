@@ -59,4 +59,6 @@ public class MemberServiceImpl implements MemberService{
 		
 		mm.modify(dto);
 	}
+	
+	
 }

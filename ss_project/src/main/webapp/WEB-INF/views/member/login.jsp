@@ -14,6 +14,7 @@
 			<input type="password" name="pwd"><br>
 			<input type="submit" value="로그인">
 			<a href="register">회원가입</a><br>
+			<input type="checkbox" name="auto_login">로그인 유지
 		</form>
 	</div>
 

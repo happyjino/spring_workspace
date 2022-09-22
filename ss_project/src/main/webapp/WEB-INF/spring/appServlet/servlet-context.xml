@@ -30,15 +30,16 @@
 	<interceptors>
 		<interceptor>
 			<mapping path="/member/info" />
+			<mapping path="/member/memberinfo" />
+			<mapping path="/member/modify" />
+			<mapping path="/member/del" />
+			<beans:ref bean="login_chk" />
+		</interceptor>
+		
+		<interceptor>
 			<mapping path="/member/modify" />
 			<mapping path="/member/del" />
 			<beans:ref bean="user_check" />
-		</interceptor>
-		<interceptor>
-			<mapping path="/member/info" />
-			<mapping path="/member/memberinfo" />
-			<mapping path="/member/info" />
-			<beans:ref bean="login_chk" />
 		</interceptor>
 		
 		<interceptor>

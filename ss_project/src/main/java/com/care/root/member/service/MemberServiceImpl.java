@@ -52,4 +52,22 @@ public class MemberServiceImpl implements MemberService{
 	public void modify(MemberDTO dto) {
 		mm.update(dto);
 	}
+	public String getMsg(String msg, String url) {
+		String scr = null;
+		scr = "<script>alert('"+msg+"');";
+		scr += "location.href='"+url+"';</script>";
+		return scr;
+	}
+	public String testMsg(MemberDTO dto) {
+		int res = 1;
+		String msg = null, url = null;
+		if(res == 1) {
+			msg = "수정 성공입니다!!!";
+			url = "/root/member/info?id="+dto.getId();
+		}else {
+			msg = "문제 발생!!!!";
+			url = "/root/member/modify?id="+dto.getId();
+		}
+		return getMsg(msg,url);
+	}
 }

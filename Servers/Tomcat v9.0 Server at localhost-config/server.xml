@@ -167,7 +167,7 @@
       
       <Context docBase="sss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:sss_project"/>
 -->
-      <Context docBase="sss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:sss_project"/></Host>
+      <Context docBase="ss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:ss_project"/></Host>
       
     </Engine>
   </Service>

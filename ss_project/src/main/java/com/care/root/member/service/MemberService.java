@@ -13,4 +13,6 @@ public interface MemberService {
 	public void register(MemberDTO dto);
 	public void delAccount(String id);
 	public void modify(MemberDTO dto);
+	public String getMsg(String msg, String url);
+	public String testMsg(MemberDTO dto);
 }
