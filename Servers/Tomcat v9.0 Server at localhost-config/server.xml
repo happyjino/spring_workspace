@@ -164,10 +164,10 @@
       <Context docBase="day05_alone" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day05_alone"/>
       <Context docBase="day06_alone" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:day06_alone"/>
       <Context docBase="s_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:s_project"/>
-      
+      <Context docBase="ss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:ss_project"/>
       <Context docBase="sss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:sss_project"/>
 -->
-      <Context docBase="ss_project" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:ss_project"/></Host>
+      <Context docBase="file" path="/root" reloadable="true" source="org.eclipse.jst.jee.server:file"/></Host>
       
     </Engine>
   </Service>

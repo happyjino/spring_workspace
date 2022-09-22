@@ -59,6 +59,7 @@ public class MemberController {
 	}
 	@GetMapping("logout")
 	public String logout(HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+		// @CookieValue(value="loginCookie", required = false)Cookie cook 로 받아올 수도 있다!
 		session.removeAttribute("login");
 		Cookie cook = WebUtils.getCookie(req, "loginCookie");
 		if(cook != null) {
