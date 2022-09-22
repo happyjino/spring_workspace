@@ -26,5 +26,15 @@
 	<update id="update">
 		update membership set pwd=#{pwd}, addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3} where id=#{id}
 	</update>
+	<update id="keepLogin">
+		update membership set auto_login=#{id} where id=#{id}
+	</update>
+	<update id="notKeepLogin">
+		update membership set auto_login=nan where id=#{id}
+	</update>
+	
+	<select id="getAutoLogin" resultMap="member">
+		select * from membership where auto_login=#{autoLogin}
+	</select>
 
 </mapper>

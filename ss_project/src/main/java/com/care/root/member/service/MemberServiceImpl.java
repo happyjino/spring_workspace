@@ -70,4 +70,16 @@ public class MemberServiceImpl implements MemberService{
 		}
 		return getMsg(msg,url);
 	}
+	public void keepLogin(String id) {
+		mm.keepLogin(id);
+	}
+	
+	public void notKeepLogin(String id) {
+		mm.notKeepLogin(id);
+	}
+	
+	public MemberDTO getAutoLogin(String autoLogin) {
+		
+		return mm.getAutoLogin(autoLogin);
+	}
 }

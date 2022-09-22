@@ -3,6 +3,7 @@ package com.care.root.member.controller;
 import java.util.ArrayList;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.util.WebUtils;
 
 import com.care.root.member.dto.MemberDTO;
 import com.care.root.member.service.MemberService;
@@ -44,6 +46,7 @@ public class MemberController {
 				cook.setMaxAge(time);
 				cook.setPath("/");
 				response.addCookie(cook);
+				ms.keepLogin(id);
 			}
 			return "redirect:success";
 		}else {
@@ -55,8 +58,14 @@ public class MemberController {
 		return "member/successLogin";
 	}
 	@GetMapping("logout")
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session, HttpServletRequest req, HttpServletResponse res) {
 		session.removeAttribute("login");
+		Cookie cook = WebUtils.getCookie(req, "loginCookie");
+		if(cook != null) {
+			cook.setMaxAge(0);
+			res.addCookie(cook);
+		}
+		
 		return "index";
 	}
 	@GetMapping("memberinfo")

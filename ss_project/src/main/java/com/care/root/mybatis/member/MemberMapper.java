@@ -10,4 +10,7 @@ public interface MemberMapper {
 	public void register(MemberDTO dto);
 	public void delAccount(String id);
 	public void update(MemberDTO dto);
+	public void keepLogin(String id);
+	public void notKeepLogin(String id);
+	public MemberDTO getAutoLogin(String autoLogin);
 }

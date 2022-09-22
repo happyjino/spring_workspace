@@ -15,4 +15,7 @@ public interface MemberService {
 	public void modify(MemberDTO dto);
 	public String getMsg(String msg, String url);
 	public String testMsg(MemberDTO dto);
+	public void keepLogin(String id);
+	public void notKeepLogin(String id);
+	public MemberDTO getAutoLogin(String autoLogin);
 }
