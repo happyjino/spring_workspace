@@ -1,5 +1,7 @@
 package com.care.root.mybatis;
 
-public interface FileMapper {
+import com.care.root.dto.FileDTO;
 
+public interface FileMapper {
+	public void saveData(FileDTO dto);
 }
