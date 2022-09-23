@@ -16,7 +16,8 @@
 			<input type="text" name="id" placeholder="id"><br>
 			<input type="password" name="pwd" placeholder="password"><br>
 			<input type="submit" value="로그인">
-			<a href="register">회원 가입</a>
+			<a href="register">회원 가입</a><br>
+			<input type="checkbox" name="auto_login">자동 로그인
 		</form>
 	</div>
 	

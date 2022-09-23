@@ -1,5 +1,7 @@
 package com.care.root.member.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +29,17 @@ public class MemberController {
 	public String login_chk(
 			@RequestParam String id,
 			@RequestParam String pwd,
+			HttpServletResponse res,
 			HttpSession session) {
 		
 		int result = ms.login_chk(id, pwd);
 		if(result == 0) {
 			session.setAttribute("login", id);
+			Cookie cook = new Cookie("loginCookie", id);
+			cook.setMaxAge(60*60*24*90);
+			cook.setPath("/");
+			res.addCookie(cook);
+			ms.autoLogin(id);
 			return "redirect:/index";
 		}
 		return "redirect:login";

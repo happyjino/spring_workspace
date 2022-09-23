@@ -13,4 +13,5 @@ public interface MemberService {
 	public void register_member(MemberDTO dto);
 	public void delete(String id, HttpSession session);
 	public void modify(MemberDTO dto, HttpSession session);
+	public void autoLogin(String id);
 }

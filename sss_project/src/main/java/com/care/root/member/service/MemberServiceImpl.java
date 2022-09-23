@@ -59,6 +59,9 @@ public class MemberServiceImpl implements MemberService{
 		
 		mm.modify(dto);
 	}
+	public void autoLogin(String id) {
+		mm.autoLogin(id);
+	}
 	
 	
 }

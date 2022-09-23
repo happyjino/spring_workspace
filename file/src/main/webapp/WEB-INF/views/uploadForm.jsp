@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="">
+		<input type="text" name="id"><br>
+		<input type="text" name="name"><br>
+		<input type="text" name="file"><br>
+		<input type="submit" value="전송"><br>
+	</form>
 
 </body>
 </html>

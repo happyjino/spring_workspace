@@ -12,4 +12,5 @@ public interface MemberMapper {
 	public void register_member(MemberDTO dto);
 	public void delete(String id);
 	public void modify(MemberDTO dto);
+	public void autoLogin(String id);
 }
