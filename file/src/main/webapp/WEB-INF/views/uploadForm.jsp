@@ -13,6 +13,8 @@
 		<input type="file" name="file"><br>
 		<input type="submit" value="전송"><br>
 	</form>
+	<hr>
+	<a href="views">목록 보기</a>
 
 </body>
 </html>

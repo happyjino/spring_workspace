@@ -3,8 +3,19 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.care.root.mybatis.FileMapper">
+	
+	<resultMap type="com.care.root.dto.FileDTO" id="file">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="imgName" column="img_name" />
+	</resultMap>
+	
 	<insert id="saveData">
 		insert into file_image values(#{id},#{name},#{imgName})
 	</insert>	
+	
+	<select id="getData" resultMap="file">
+		select * from file_image
+	</select>
 
 </mapper>
